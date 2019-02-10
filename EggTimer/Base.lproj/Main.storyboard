@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,87 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCE-kr-Yd3">
+                                <rect key="frame" x="0.0" y="27" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wDD-Yb-tQh"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="EGG TIMER" id="xrn-Gu-caX">
+                                        <barButtonItem key="leftBarButtonItem" title="STOP" id="5sD-QW-dJf">
+                                            <connections>
+                                                <action selector="pause:" destination="BYZ-38-t0r" id="4pG-6S-8Sf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="START" id="xse-G9-SaH">
+                                            <connections>
+                                                <action selector="play:" destination="BYZ-38-t0r" id="CUX-hV-TTF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1c-5f-Oc8">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8hX-Ju-AVU"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="rewind" id="eiA-3A-hWP">
+                                        <connections>
+                                            <action selector="rewind:" destination="BYZ-38-t0r" id="hLi-WK-Abm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kMs-bp-ATi"/>
+                                    <barButtonItem title="RESET" id="Hjr-n7-cYD">
+                                        <connections>
+                                            <action selector="resetBtn:" destination="BYZ-38-t0r" id="eoz-nb-xx7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VDP-kh-LUT"/>
+                                    <barButtonItem image="forward" id="7HJ-Ay-30a">
+                                        <connections>
+                                            <action selector="forward:" destination="BYZ-38-t0r" id="HGC-9J-CnP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL5-gi-zss">
+                                <rect key="frame" x="118" y="300" width="119" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e1c-5f-Oc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Ak-wL-JBS"/>
+                            <constraint firstItem="e1c-5f-Oc8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6a0-5J-bUt"/>
+                            <constraint firstItem="GCE-kr-Yd3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9S6-sw-LCn"/>
+                            <constraint firstItem="bL5-gi-zss" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BTi-rd-tuA"/>
+                            <constraint firstItem="e1c-5f-Oc8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FPK-oE-BPy"/>
+                            <constraint firstItem="GCE-kr-Yd3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ikp-1V-DlB"/>
+                            <constraint firstItem="bL5-gi-zss" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-10" id="wg8-ca-ofx"/>
+                            <constraint firstItem="GCE-kr-Yd3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="xng-YQ-2CI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timeDisplay" destination="bL5-gi-zss" id="16M-KE-Nie"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="forward" width="36" height="36"/>
+        <image name="rewind" width="36" height="36"/>
+    </resources>
 </document>
