@@ -25,12 +25,12 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="EGG TIMER" id="xrn-Gu-caX">
-                                        <barButtonItem key="leftBarButtonItem" title="STOP" id="5sD-QW-dJf">
+                                        <barButtonItem key="leftBarButtonItem" title="PAUSE" id="5sD-QW-dJf">
                                             <connections>
                                                 <action selector="pause:" destination="BYZ-38-t0r" id="4pG-6S-8Sf"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="START" id="xse-G9-SaH">
+                                        <barButtonItem key="rightBarButtonItem" title="PLAY" id="xse-G9-SaH">
                                             <connections>
                                                 <action selector="play:" destination="BYZ-38-t0r" id="CUX-hV-TTF"/>
                                             </connections>
