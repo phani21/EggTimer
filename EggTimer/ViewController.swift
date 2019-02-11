@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         var stopWatchTimer = Timer()
         var currentTime = 0
     var a: Int = 0
-        
+    var isRunning: Bool = false
         
         
         
@@ -32,15 +32,18 @@ class ViewController: UIViewController {
         
         @IBAction func pause(_ sender: Any) {
             
-            
+            isRunning=false
             stopWatchTimer.invalidate()
             
         }
+    
+
         @IBAction func play(_ sender: Any) {
+                if(!isRunning){
             stopWatchTimer=Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(ViewController.updateTime)), userInfo: nil, repeats: true)
+            isRunning=true
             
-            
-        }
+    }}
         @IBAction func resetBtn(_ sender: Any) {
             currentTime=0
             updateTime(a:0)
