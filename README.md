@@ -1,2 +1,2 @@
 # EggTimer
-Added a screen recording that demonstrates the app
+Added a screen recording named 'Untitled.mov' that demonstrates the app
